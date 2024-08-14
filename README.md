@@ -3,8 +3,7 @@
 ## 1. Clone the repository
 
 ```sh
-git clone https://github.com/ASH-WIN-10/keylogger.git
-cd keylogger
+git clone https://github.com/ASH-WIN-10/keylogger.git && cd keylogger
 ```
 
 ## 2. Create a virtual environment
