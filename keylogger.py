@@ -36,4 +36,6 @@ with open("./file.txt", "a") as file:
 
 # Collect events until released
 with keyboard.Listener(on_press=on_press) as listener:
+    print("The keys are being printed in the 'file.txt' file!!")
     listener.join()
+    print("Press Esc to exit!!")
